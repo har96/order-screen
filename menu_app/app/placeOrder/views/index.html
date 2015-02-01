@@ -1,0 +1,46 @@
+<div ng-controller="IndexController">
+
+  <super-navbar>
+    <super-navbar-title>
+      Place an Order
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="list">
+    <label class="item item-input">
+      <input type="text" placeholder="Customer" ng-model="order.name" />
+    </label>
+  </div>
+
+  <div class="list card" ng-repeat="i in items">
+    <div class="item item-divider">
+      <h3>Item</h3>
+    </div>
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Meal
+      </div>
+      <select ng-model="order.food[i].food">
+          <option ng-repeat="(meal, data) in menu">{{meal}}</option>
+      </select>
+    </label>
+    <div ng-if="menu[order.food[i].food][0] == 'input'" class="item item-input-inset">
+        <label class="item-input-wrapper">
+            <input type="text" placeholder="{{menu[order.food[i].food][1]}}" ng-model="order.food[i].options"/>
+        </label>
+    </div>
+    <div ng-if="menu[order.food[i].food][0] == 'toggle'" class="item item-checkbox">
+        <label class="checkbox">
+            <input type="checkbox" ng-model="order.food[i].options"/>
+        </label>
+        {{menu[order.food[i].food][1]}}
+    </div>
+
+  </div>
+  <div class="padding">
+      <button class="button icon super-plus" ng-click="addItem()"></button>
+      <button class="button button-block button-calm" ng-click="placeOrder()">Place Order</button>
+  </div>
+
+
+</div>

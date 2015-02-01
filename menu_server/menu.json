@@ -1,0 +1,11 @@
+{
+  "Other":["input", "Meal"],
+  "Toasted Bread":["toggle", "Butter?"],
+  "Salad":["input", "Dressing"],
+  "Sandwiches":["input", "Kind"],
+  "Chili":[null],
+  "Soup":["input","Kind"],
+  "SpaghettiOs":[null],
+  "Chicken":[null],
+  "Baked Potatoe":["input", "Toppings"]
+}

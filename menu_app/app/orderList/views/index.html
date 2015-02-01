@@ -1,0 +1,21 @@
+<div ng-controller="IndexController">
+
+  <div class="padding">
+    <h1>Orders</h1>
+    <div class="list">
+        <div class="item item-divider" ng-repeat-start="order in orders">
+            {{order.name}}
+            <a style="float: right" class="button button-icon icon super-checkmark-circled" ng-click="bumpOrder($index)"></a>
+        </div>
+        <div class="item" ng-repeat="food in order.food">
+            <h3>{{ food.food }}</h3>
+            <p>{{ food.options }}</p>
+            <span style="color: red;">{{ food["RED FLAG"] }}</span>
+        </div>
+        <span ng-repeat-end=""></span>
+    </div>
+    <span style="color: red;">{{ error }}</span>
+    <button class="button icon super-refresh" ng-click="refresh()"></button>
+  </div>
+
+</div>
